@@ -1,8 +1,13 @@
-create database versionary;
+--cria base de dados
+create database versionary; 
+
+--usa base de dados
 use master;
 use versionary;
 
+--cria tabela
 create table plataforma(
+--cria a chave primária da tabela
 id int primary key identity not null,
 nome varchar(50) not null
 );
@@ -13,6 +18,7 @@ usuario varchar(35) not null,
 email varchar(50) not null,
 senha varchar(20) not null,
 plataforma_id int not null,
+--cria uma chave estrangeira que referencia outra tabela
 foreign key (plataforma_id) references plataforma(id)
 );
 
